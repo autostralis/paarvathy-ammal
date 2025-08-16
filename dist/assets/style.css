@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autostralis | Premium Automotive Infrastructure</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS -->
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.svg" alt="Autostralis Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#vision">Vision</a></li>
+            <li><a href="#mission">Mission</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <video autoplay muted loop playsinline>
+        <source src="hero-background.mp4" type="video/mp4">
+    </video>
+    <div class="hero-content">
+        <h1>From bare space to business-ready launch</h1>
+        <p>We design, build, and hand over installation‑ready bays and premium studios that perform from day one.</p>
+        <div class="cta-buttons">
+            <a href="#contact" class="btn-primary">Get Started</a>
+            <a href="#about" class="btn-secondary">Learn More</a>
+        </div>
+        <p class="delivery-note">Part of Mangalathu Group</p>
+    </div>
+</section>
+
+<main style="max-width: 1120px; margin: auto; padding: 40px 16px;">
+    <section id="about">
+        <h2>About Us</h2>
+        <p><strong>Autostralis</strong> is a premium automotive infrastructure partner ...</p>
+        <!-- Continue with the content from your original HTML -->
+    </section>
+</main>
+
+<!-- Floating Action Buttons (WhatsApp and Call) -->
+<div class="fab-container">
+    <a href="https://wa.me/YOURNUMBER" target="_blank">
+        <img src="whatsapp-icon.svg" alt="WhatsApp">
+    </a>
+    <a href="tel:+91XXXXXXXXXX">
+        <img src="call-icon.svg" alt="Call">
+    </a>
+</div>
+
+</body>
+</html>

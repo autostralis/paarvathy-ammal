@@ -1,0 +1,69 @@
+
+/* =====================
+   Autostralis Mobile Fix (no HTML changes required)
+   Put this file as /assets/styles.css and ensure it loads after Tailwind CDN.
+   ===================== */
+
+/* Base safe defaults */
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0}
+img,video{display:block;max-width:100%;height:auto}
+
+/* Prevent overflow on small screens */
+.container,.section,.card,.hero,.grid,.wrapper{overflow:hidden}
+
+/* Typography scale that adapts */
+:root{ --step: clamp(14px, 2vw + 10px, 18px); }
+body{ font-size: var(--step); line-height: 1.5; }
+
+/* ---- HERO video: full-bleed, cover ---- */
+#home{ position: relative; }
+#home video{ object-fit: cover; object-position: center; }
+#home .max-w-3xl{ max-width: 42rem; } /* keep hero copy readable */
+
+/* ---- Generic image frames: keep images "inside the box" ---- */
+.image-frame{ border-radius: 16px; overflow: hidden; width: 100%; }
+.image-frame img{ width: 100%; height: clamp(180px, 45vw, 420px); object-fit: cover; object-position: center; }
+
+/* ---- Founder round crop (if used anywhere) ---- */
+.founder-avatar{ width: clamp(120px, 35vw, 220px); aspect-ratio: 1 / 1; border-radius: 9999px; overflow: hidden; margin: 0 auto; border: 3px solid rgba(255,255,255,.6); box-shadow: 0 6px 24px rgba(0,0,0,.15); }
+.founder-avatar img{ width:100%; height:100%; object-fit: cover; object-position: 50% 35%; }
+
+/* ---- Grids: collapse gracefully on mobile ---- */
+@media (max-width: 719.98px){
+  .grid{ display: grid; grid-template-columns: 1fr; gap: 16px; }
+}
+
+/* =====================
+   Mobile Navigation WITHOUT editing HTML
+   Tailwind uses "hidden md:flex" for the top nav.
+   We override it below on small screens to show a simple dropdown-style menu.
+   ===================== */
+@media (max-width: 979.98px){
+  header nav.hidden.md\:flex{
+    display: flex !important;
+    position: fixed;
+    left: 0; right: 0;
+    top: 56px;            /* sits below the header bar */
+    background: rgba(12,12,12,.98);
+    padding: 12px 16px;
+    gap: 12px;
+    flex-wrap: wrap;
+    border-top: 1px solid #262626;
+    box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    z-index: 40;
+  }
+  header nav.hidden.md\:flex a{
+    display: inline-block;
+    padding: 8px 10px;
+  }
+}
+
+/* Header logo sizing safety (if inline styles are absent on some pages) */
+header .brand img, header img[alt*="Autostralis"]{ height: 40px; width: auto; }
+
+/* Buttons (CTA) – ensure tappable size */
+a.cta, .cta{ min-height: 44px; padding: 12px 18px; border-radius: 10px; }
+
+/* Kill any leftover placeholders from templates */
+.placeholder, .template-note{ display: none !important; }
